@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  title: FleetCare API
+  version: 0.1.0
+paths:
+  /api/compliance/summary:
+    get:
+      summary: Get compliance / maintenance summary
+      description: >
+        Returns aggregated counts of assets by compliance status
+        and number of open maintenance/incident reports.
+      responses:
+        "200":
+          description: Compliance summary numbers
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ok
+                  - dueSoon
+                  - overdue
+                  - openReports
+                properties:
+                  ok:
+                    type: integer
+                    example: 12
+                  dueSoon:
+                    type: integer
+                    example: 4
+                  overdue:
+                    type: integer
+                    example: 2
+                  openReports:
+                    type: integer
+                    example: 5
