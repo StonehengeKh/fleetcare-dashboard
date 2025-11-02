@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "assets": "Assets",
+    "reports": "Reports"
+  },
+  "header": {
+    "dashboardTitle": "Dashboard",
+    "dashboardSubtitle": "Compliance & maintenance overview",
+    "assetsTitle": "Assets",
+    "assetsSubtitle": "Inventory, status and compliance deadlines",
+    "reportsTitle": "Reports",
+    "reportsSubtitle": "Maintenance and incident reports"
+  },
+  "dashboard": {
+    "ok": "OK",
+    "dueSoon": "Due soon",
+    "overdue": "Overdue",
+    "openReports": "Open reports"
+  },
+  "assets": {
+    "open": "Open",
+    "back": "← Back to assets",
+    "maintenanceLog": "Maintenance log",
+    "compliance": "Compliance",
+    "noEntries": "No entries yet (stub).",
+    "nextInspection": "Next inspection: — (stub)",
+    "detailStub": "Temporary stub: asset detail with tabs (Maintenance / Compliance) will appear here."
+  },
+  "reports": {
+    "empty": "No reports yet (stub).",
+    "tableStub": "Temporary stub: a table of maintenance/incident reports will be here."
+  },
+  "common": {
+    "loading": "Loading…",
+    "notFoundTitle": "Page not found",
+    "notFoundText": "The page you are looking for doesn’t exist."
+  },
+  "footer": {
+    "tagline": "Internal maintenance & compliance demo"
+  }
+}
