@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "dashboard": "Übersicht",
+    "assets": "Maschinen",
+    "reports": "Berichte"
+  },
+  "header": {
+    "dashboardTitle": "Übersicht",
+    "dashboardSubtitle": "Überblick zu Compliance und Wartung",
+    "assetsTitle": "Maschinen",
+    "assetsSubtitle": "Bestand, Status und Prüffristen",
+    "reportsTitle": "Berichte",
+    "reportsSubtitle": "Wartungs- und Vorfallberichte"
+  },
+  "dashboard": {
+    "ok": "In Ordnung",
+    "dueSoon": "Bald fällig",
+    "overdue": "Überfällig",
+    "openReports": "Offene Meldungen"
+  },
+  "assets": {
+    "open": "Öffnen",
+    "back": "← Zurück zur Liste",
+    "maintenanceLog": "Wartungsprotokoll",
+    "compliance": "Compliance",
+    "noEntries": "Keine Einträge (Platzhalter).",
+    "nextInspection": "Nächste Prüfung: — (Platzhalter)",
+    "detailStub": "Platzhalter: Detailansicht mit Tabs (Wartung / Compliance) erscheint hier."
+  },
+  "reports": {
+    "empty": "Noch keine Berichte (Platzhalter).",
+    "tableStub": "Platzhalter: Hier wird eine Tabelle mit Wartungs-/Vorfallberichten erscheinen."
+  },
+  "common": {
+    "loading": "Laden…",
+    "notFoundTitle": "Seite nicht gefunden",
+    "notFoundText": "Die aufgerufene Seite ist nicht vorhanden."
+  },
+  "footer": { "tagline": "Interne Demo für Wartung & Compliance" }
+}

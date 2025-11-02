@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import { complianceRouter } from "./routes/compliance.route.js";
-import { errorHandler } from "./middlewares/errorHandler.js";
+import { complianceRouter } from "./routes/compliance.route";
+import { errorHandler } from "./middlewares/errorHandler";
 
 export const app = express();
 
