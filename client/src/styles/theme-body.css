@@ -1,0 +1,31 @@
+@layer base {
+  html.dark body {
+    background:
+      radial-gradient(
+        1200px 600px at 10% -10%,
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+      ),
+      radial-gradient(
+        900px 500px at 90% -20%,
+        rgba(255, 255, 255, 0.05),
+        transparent 45%
+      ),
+      #0f1216;
+  }
+
+  html.light body {
+    background:
+      radial-gradient(
+        1200px 600px at 10% -10%,
+        rgba(15, 23, 42, 0.04),
+        transparent 40%
+      ),
+      radial-gradient(
+        900px 500px at 90% -20%,
+        rgba(15, 23, 42, 0.03),
+        transparent 45%
+      ),
+      #f3f4f6;
+  }
+}

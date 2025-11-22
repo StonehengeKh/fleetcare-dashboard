@@ -26,7 +26,7 @@ export function AppRoutes() {
 
   return (
     <Suspense
-      fallback={<div className="text-white/60 p-4">{t("common.loading")}</div>}
+      fallback={<div className="text-dim p-4">{t("common.loading")}</div>}
     >
       {element}
     </Suspense>

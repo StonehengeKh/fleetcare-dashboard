@@ -1,0 +1,56 @@
+@layer base {
+  :root {
+    --bg: #0b0f14;
+    --card: #121821;
+    --card-edge: rgba(255, 255, 255, 0.06);
+    --text: rgba(255, 255, 255, 0.92);
+    --text-dim: rgba(255, 255, 255, 0.6);
+    --ok: #7ddc7a;
+    --due: #ffcc66;
+    --over: #ff6b6b;
+  }
+
+  :root.light {
+    --bg: #f6f7f8;
+    --card: #ffffff;
+    --card-edge: rgba(0, 0, 0, 0.08);
+    --text: rgba(0, 0, 0, 0.92);
+    --text-dim: rgba(0, 0, 0, 0.6);
+
+    --nav-active-bg: rgba(0, 0, 0, 0.08);
+    --nav-active-text: rgba(0, 0, 0, 0.92);
+    --nav-hover-bg: #f3f4f6;
+    --card-hover-bg: #f3f4f6;
+
+    --btn-bg: #e5e7eb;
+    --btn-hover-bg: #d1d5db;
+    --btn-text: #111827;
+    --btn-border: rgba(0, 0, 0, 0.08);
+
+    --asset-card-bg: #ffffff;
+    --asset-card-hover-bg: #f9fafb;
+    --asset-card-border: transparent;
+  }
+
+  :root.dark {
+    --bg: #0b0f14;
+    --card: #121821;
+    --card-edge: rgba(255, 255, 255, 0.06);
+    --text: rgba(255, 255, 255, 0.92);
+    --text-dim: rgba(255, 255, 255, 0.6);
+
+    --nav-active-bg: rgba(255, 255, 255, 0.1);
+    --nav-active-text: rgba(255, 255, 255, 0.92);
+    --nav-hover-bg: #111827;
+    --card-hover-bg: #111827;
+
+    --btn-bg: #111827;
+    --btn-hover-bg: #1f2937;
+    --btn-text: #f9fafb;
+    --btn-border: rgba(255, 255, 255, 0.12);
+
+    --asset-card-bg: #0f172a;
+    --asset-card-hover-bg: #111827;
+    --asset-card-border: #1f2937;
+  }
+}

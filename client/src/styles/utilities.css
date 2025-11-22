@@ -1,0 +1,49 @@
+@layer utilities {
+  .bg-app {
+    background-color: var(--bg);
+  }
+
+  .bg-card {
+    background-color: var(--card);
+  }
+
+  .border-card-edge {
+    border-color: var(--card-edge);
+  }
+
+  .text-basecolor {
+    color: var(--text);
+  }
+
+  .text-dim {
+    color: var(--text-dim);
+  }
+
+  .text-ok {
+    color: var(--ok);
+  }
+
+  .text-due {
+    color: var(--due);
+  }
+
+  .text-over {
+    color: var(--over);
+  }
+
+  .shadow-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .bg-soft-gradient {
+    background: radial-gradient(
+      1200px 600px at 80% -20%,
+      rgba(255, 255, 255, 0.06),
+      transparent 60%
+    );
+  }
+}
