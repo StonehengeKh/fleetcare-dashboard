@@ -38,5 +38,9 @@
   },
   "footer": {
     "tagline": "Internal maintenance & compliance demo"
+  },
+  "theme": {
+    "toLight": "Switch to light",
+    "toDark": "Switch to dark"
   }
 }

@@ -14,7 +14,7 @@ export default function BackLink({
         if (window.history.length > 2) navigate(-1);
         else navigate(ROUTES.assets);
       }}
-      className="text-white/60 hover:underline"
+      className="text-dim hover:underline"
     >
       {label}
     </button>

@@ -18,11 +18,11 @@ export default function StatCard({
 
   return (
     <div className="rounded-xl2 bg-card shadow-card p-4 border border-card-edge">
-      <div className="text-white/70 text-sm">{label}</div>
+      <div className="text-dim text-sm">{label}</div>
       <div className={`mt-2 text-3xl font-semibold ${toneClass}`}>
         {loading ? "…" : error ? "—" : (value ?? 0)}
       </div>
-      {hint ? <div className="text-white/40 text-xs mt-1">{hint}</div> : null}
+      {hint ? <div className="text-dim text-xs mt-1">{hint}</div> : null}
     </div>
   );
 }

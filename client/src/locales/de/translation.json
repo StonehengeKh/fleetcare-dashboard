@@ -36,5 +36,11 @@
     "notFoundTitle": "Seite nicht gefunden",
     "notFoundText": "Die aufgerufene Seite ist nicht vorhanden."
   },
-  "footer": { "tagline": "Interne Demo für Wartung & Compliance" }
+  "footer": {
+    "tagline": "Interne Demo für Wartung & Compliance"
+  },
+  "theme": {
+    "toLight": "Zur hellen Ansicht wechseln",
+    "toDark": "Zur dunklen Ansicht wechseln"
+  }
 }
