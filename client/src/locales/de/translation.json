@@ -16,20 +16,21 @@
     "ok": "In Ordnung",
     "dueSoon": "Bald fällig",
     "overdue": "Überfällig",
-    "openReports": "Offene Meldungen"
+    "openReports": "Offene Meldungen",
+    "empty": "Es liegen noch keine Daten vor."
   },
   "assets": {
     "open": "Öffnen",
     "back": "← Zurück zur Liste",
     "maintenanceLog": "Wartungsprotokoll",
     "compliance": "Compliance",
-    "noEntries": "Keine Einträge (Platzhalter).",
-    "nextInspection": "Nächste Prüfung: — (Platzhalter)",
-    "detailStub": "Platzhalter: Detailansicht mit Tabs (Wartung / Compliance) erscheint hier."
+    "noEntries": "Noch keine Einträge vorhanden.",
+    "nextInspection": "Die nächste Prüfung ist noch nicht geplant.",
+    "detailStub": "Detailinformationen zu dieser Maschine werden angezeigt, sobald Wartungs- und Compliance-Daten verfügbar sind."
   },
   "reports": {
-    "empty": "Noch keine Berichte (Platzhalter).",
-    "tableStub": "Platzhalter: Hier wird eine Tabelle mit Wartungs-/Vorfallberichten erscheinen."
+    "empty": "Es liegen noch keine Berichte vor.",
+    "tableStub": "Sobald Daten verfügbar sind, werden hier Wartungs- und Vorfallberichte aufgelistet."
   },
   "common": {
     "loading": "Laden…",
@@ -41,6 +42,10 @@
   },
   "theme": {
     "toLight": "Zur hellen Ansicht wechseln",
-    "toDark": "Zur dunklen Ansicht wechseln"
+    "toDark": "Zur dunklen Ansicht wechseln",
+    "languageSwitcher": "Sprache"
+  },
+  "app": {
+    "name": "FleetCare"
   }
 }

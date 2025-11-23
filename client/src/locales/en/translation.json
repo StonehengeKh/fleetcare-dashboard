@@ -16,20 +16,21 @@
     "ok": "OK",
     "dueSoon": "Due soon",
     "overdue": "Overdue",
-    "openReports": "Open reports"
+    "openReports": "Open reports",
+    "empty": "No data available yet."
   },
   "assets": {
     "open": "Open",
     "back": "← Back to assets",
     "maintenanceLog": "Maintenance log",
     "compliance": "Compliance",
-    "noEntries": "No entries yet (stub).",
-    "nextInspection": "Next inspection: — (stub)",
-    "detailStub": "Temporary stub: asset detail with tabs (Maintenance / Compliance) will appear here."
+    "noEntries": "No entries available yet.",
+    "nextInspection": "Next inspection is not scheduled yet.",
+    "detailStub": "Detailed information about this asset will be shown here as soon as maintenance and compliance data is available."
   },
   "reports": {
-    "empty": "No reports yet (stub).",
-    "tableStub": "Temporary stub: a table of maintenance/incident reports will be here."
+    "empty": "No reports available yet.",
+    "tableStub": "Once data is available, a list of maintenance and incident reports will be shown here."
   },
   "common": {
     "loading": "Loading…",
@@ -41,6 +42,10 @@
   },
   "theme": {
     "toLight": "Switch to light",
-    "toDark": "Switch to dark"
+    "toDark": "Switch to dark",
+    "languageSwitcher": "Language"
+  },
+  "app": {
+    "name": "FleetCare"
   }
 }

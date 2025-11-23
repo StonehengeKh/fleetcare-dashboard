@@ -9,7 +9,9 @@ export default function Sidebar() {
 
   return (
     <aside className="bg-card shadow-soft border-r border-card-edge">
-      <div className="p-4 text-xl font-semibold">FleetCare</div>
+      <div className="p-4 text-xl font-semibold">
+        {t("app.name", "FleetCare")}
+      </div>
       <nav className="p-2 space-y-1">
         {NAV_ITEMS.map((item) => (
           <NavLink
@@ -21,7 +23,7 @@ export default function Sidebar() {
                 "block rounded-md px-3 py-2 transition-colors text-basecolor",
                 "hover:bg-[var(--nav-hover-bg)] hover:no-underline",
                 isActive &&
-                "bg-[var(--nav-active-bg)] text-[var(--nav-active-text)] font-medium border-l-2 border-[var(--due)]",
+                  "bg-[var(--nav-active-bg)] text-[var(--nav-active-text)] font-medium border-l-2 border-[var(--due)]",
               )
             }
           >

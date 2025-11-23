@@ -9,11 +9,12 @@ const mockAssets: { id: string; name: string; status: AssetStatus }[] = [
 
 export default function AssetsPage() {
   const { t } = useTranslation();
+  const hasAssets = !mockAssets.length;
 
   return (
     <div>
       <h2 className="text-xl font-semibold mb-2">{t("header.assetsTitle")}</h2>
-      <p className="text-dim mb-4">{t("assets.noEntries")}</p>
+      {hasAssets && <p className="text-dim mb-4">{t("assets.noEntries")}</p>}
 
       <ul className="space-y-2">
         {mockAssets.map((a) => (
