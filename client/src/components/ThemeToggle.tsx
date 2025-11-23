@@ -13,7 +13,8 @@ export default function ThemeToggle() {
       aria-label={title}
       title={title}
       className="
-        px-3 py-2 rounded-md text-sm
+        inline-flex items-center justify-center
+        h-9 px-3 rounded-md text-sm
         bg-[var(--btn-bg)] text-[var(--btn-text)]
         border border-[var(--btn-border)]
         hover:bg-[var(--btn-hover-bg)]

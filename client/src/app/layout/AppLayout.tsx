@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Header from "@app/layout/Header";
-import Footer from "@app/layout/Footer";
+import { useTranslation } from "react-i18next";
 import Sidebar from "@app/layout/Sidebar";
 import { ROUTES } from "@app/router/paths";
 import { PageMain } from "@app/layout/PageMain";
@@ -10,25 +9,41 @@ type AppLayoutProps = {
   children: React.ReactNode;
 };
 
-function usePageMeta(pathname: string) {
-  if (pathname === ROUTES.dashboard)
+function getPageMeta(
+  pathname: string,
+  t: ReturnType<typeof useTranslation>["t"],
+) {
+  if (pathname === ROUTES.dashboard) {
     return {
-      title: "Dashboard",
-      subtitle: "Compliance & maintenance overview",
+      title: t("header.dashboardTitle"),
+      subtitle: t("header.dashboardSubtitle"),
     };
-  if (pathname.startsWith(ROUTES.assets))
+  }
+
+  if (pathname.startsWith(ROUTES.assets)) {
     return {
-      title: "Assets",
-      subtitle: "Inventory, status and compliance deadlines",
+      title: t("header.assetsTitle"),
+      subtitle: t("header.assetsSubtitle"),
     };
-  if (pathname.startsWith(ROUTES.reports))
-    return { title: "Reports", subtitle: "Maintenance and incident reports" };
-  return { title: "FleetCare", subtitle: undefined };
+  }
+
+  if (pathname.startsWith(ROUTES.reports)) {
+    return {
+      title: t("header.reportsTitle"),
+      subtitle: t("header.reportsSubtitle"),
+    };
+  }
+
+  return {
+    title: t("app.name", "FleetCare"), // fallback на случай отсутствия ключа
+    subtitle: undefined as string | undefined,
+  };
 }
 
 export default function AppLayout({ children }: AppLayoutProps) {
   const { pathname } = useLocation();
-  const meta = usePageMeta(pathname);
+  const { t } = useTranslation();
+  const meta = getPageMeta(pathname, t);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -54,7 +69,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
           >
             ☰
           </button>
-          <div className="font-semibold">FleetCare</div>
+          <div className="font-semibold">{t("app.name", "FleetCare")}</div>
           <div className="w-9 h-9" />
         </div>
 

@@ -21,3 +21,9 @@ export interface HeaderProps {
   subtitle?: string;
   rightSlot?: React.ReactNode;
 }
+
+export type Report = {
+  id: string;
+  title: string;
+  date: string;
+};

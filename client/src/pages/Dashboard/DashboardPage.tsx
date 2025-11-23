@@ -20,49 +20,60 @@ export default function DashboardPage() {
     () => [
       {
         key: "ok",
-        label: t("ok"),
+        label: t("dashboard.ok"),
         value: data?.ok,
         tone: "ok",
-        hint: "assets",
+        hint: t("nav.assets"),
       },
       {
         key: "dueSoon",
-        label: t("dueSoon"),
+        label: t("dashboard.dueSoon"),
         value: data?.dueSoon,
         tone: "due",
-        hint: "assets",
+        hint: t("nav.assets"),
       },
       {
         key: "overdue",
-        label: t("overdue"),
+        label: t("dashboard.overdue"),
         value: data?.overdue,
         tone: "over",
-        hint: "assets",
+        hint: t("nav.assets"),
       },
       {
         key: "openReports",
-        label: t("openReports"),
+        label: t("dashboard.openReports"),
         value: data?.openReports,
         tone: "due",
-        hint: "reports",
+        hint: t("nav.reports"),
       },
     ],
     [t, data],
   );
 
+  const hasData =
+    !!data &&
+    [data.ok, data.dueSoon, data.overdue, data.openReports].some(
+      (value) => (value ?? 0) > 0,
+    );
+
   return (
-    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-      {cards.map(({ key, label, value, tone, hint }) => (
-        <StatCard
-          key={key}
-          label={label}
-          value={value}
-          tone={tone}
-          hint={hint}
-          loading={isLoading}
-          error={isError}
-        />
-      ))}
+    <div>
+      {!isLoading && !isError && !hasData && (
+        <p className="text-dim mb-4">{t("dashboard.empty")}</p>
+      )}
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        {cards.map(({ key, label, value, tone, hint }) => (
+          <StatCard
+            key={key}
+            label={label}
+            value={value}
+            tone={tone}
+            hint={hint}
+            loading={isLoading}
+            error={isError}
+          />
+        ))}
+      </div>
     </div>
   );
 }

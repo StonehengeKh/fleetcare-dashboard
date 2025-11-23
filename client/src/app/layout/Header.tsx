@@ -1,5 +1,6 @@
 import type { HeaderProps } from "@types";
 import ThemeToggle from "@components/ThemeToggle";
+import { LanguageToggle } from "@components/LanguageToggle";
 
 export default function Header({ title, subtitle, rightSlot }: HeaderProps) {
   return (
@@ -10,6 +11,7 @@ export default function Header({ title, subtitle, rightSlot }: HeaderProps) {
       </div>
       <div className="shrink-0 flex items-center gap-2">
         {rightSlot}
+        <LanguageToggle />
         <ThemeToggle />
       </div>
     </header>
