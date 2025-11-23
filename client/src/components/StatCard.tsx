@@ -1,6 +1,6 @@
-import type { StatCardProps } from "@types";
+import type { StatCard } from "@types";
 
-const toneToClass: Record<StatCardProps["tone"], string> = {
+const toneToClass: Record<StatCard["tone"], string> = {
   ok: "text-ok",
   due: "text-due",
   over: "text-over",
@@ -13,7 +13,7 @@ export default function StatCard({
   tone,
   loading,
   error,
-}: StatCardProps) {
+}: StatCard) {
   const toneClass = toneToClass[tone];
 
   return (

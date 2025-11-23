@@ -25,8 +25,25 @@
     "maintenanceLog": "Maintenance log",
     "compliance": "Compliance",
     "noEntries": "No entries available yet.",
+    "noFilteredEntries": "No assets match your current filters.",
     "nextInspection": "Next inspection is not scheduled yet.",
-    "detailStub": "Detailed information about this asset will be shown here as soon as maintenance and compliance data is available."
+    "detailStub": "Detailed information about this asset will be shown here as soon as maintenance and compliance data is available.",
+    "filters": {
+      "searchLabel": "Search",
+      "searchPlaceholder": "Search by name or ID…",
+      "statusLabel": "Status",
+      "statusAll": "All statuses"
+    }
+  },
+  "assetForm": {
+    "nameLabel": "Name",
+    "nameError": "Please enter a name for this asset.",
+    "statusLabel": "Status",
+    "nextInspectionLabel": "Next inspection",
+    "nextInspectionError": "Please enter a valid date.",
+    "notesLabel": "Notes",
+    "notesError": "Notes must not exceed 1000 characters.",
+    "save": "Save changes"
   },
   "reports": {
     "empty": "No reports available yet.",

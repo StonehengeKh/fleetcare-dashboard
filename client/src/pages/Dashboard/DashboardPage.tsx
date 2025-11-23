@@ -1,7 +1,7 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { useGetComplianceSummaryQuery } from "@features/dashboard/api";
 import StatCard from "@components/StatCard";
-import { useTranslation } from "react-i18next";
 import type { StatTone } from "@types";
 
 export default function DashboardPage() {
