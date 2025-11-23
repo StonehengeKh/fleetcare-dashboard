@@ -1,6 +1,12 @@
-import type { HeaderProps } from "@types";
+import React from "react";
 import ThemeToggle from "@components/ThemeToggle";
 import { LanguageToggle } from "@components/LanguageToggle";
+
+interface HeaderProps {
+  title: string;
+  subtitle?: string;
+  rightSlot?: React.ReactNode;
+}
 
 export default function Header({ title, subtitle, rightSlot }: HeaderProps) {
   return (

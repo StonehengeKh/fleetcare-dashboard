@@ -1,6 +1,6 @@
 export type StatTone = "ok" | "due" | "over";
 
-export interface StatCardProps {
+export interface StatCard {
   label: string;
   value?: number;
   hint?: string;
@@ -9,21 +9,20 @@ export interface StatCardProps {
   error?: boolean;
 }
 
-export type NavItem = {
-  key: string;
-  label: string;
-  to: string;
-  end?: boolean;
-};
-
-export interface HeaderProps {
-  title: string;
-  subtitle?: string;
-  rightSlot?: React.ReactNode;
-}
-
 export type Report = {
   id: string;
   title: string;
   date: string;
+};
+
+export type ComplianceItem = {
+  id: string;
+  type: string;
+  dueDate: string;
+};
+
+export type MaintenanceEntry = {
+  id: string;
+  date: string;
+  description: string;
 };

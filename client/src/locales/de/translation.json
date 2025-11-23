@@ -25,8 +25,25 @@
     "maintenanceLog": "Wartungsprotokoll",
     "compliance": "Compliance",
     "noEntries": "Noch keine Einträge vorhanden.",
+    "noFilteredEntries": "Keine Maschinen entsprechen den aktuellen Filtern.",
     "nextInspection": "Die nächste Prüfung ist noch nicht geplant.",
-    "detailStub": "Detailinformationen zu dieser Maschine werden angezeigt, sobald Wartungs- und Compliance-Daten verfügbar sind."
+    "detailStub": "Detailinformationen zu dieser Maschine werden angezeigt, sobald Wartungs- und Compliance-Daten verfügbar sind.",
+    "filters": {
+      "searchLabel": "Suche",
+      "searchPlaceholder": "Nach Name oder ID suchen…",
+      "statusLabel": "Status",
+      "statusAll": "Alle Status"
+    }
+  },
+  "assetForm": {
+    "nameLabel": "Name",
+    "nameError": "Bitte einen Namen für die Maschine angeben.",
+    "statusLabel": "Status",
+    "nextInspectionLabel": "Nächste Prüfung",
+    "nextInspectionError": "Bitte ein gültiges Datum eingeben.",
+    "notesLabel": "Notizen",
+    "notesError": "Notizen dürfen 1000 Zeichen nicht überschreiten.",
+    "save": "Änderungen speichern"
   },
   "reports": {
     "empty": "Es liegen noch keine Berichte vor.",
