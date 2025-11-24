@@ -43,7 +43,8 @@
     "nextInspectionError": "Bitte ein gültiges Datum eingeben.",
     "notesLabel": "Notizen",
     "notesError": "Notizen dürfen 1000 Zeichen nicht überschreiten.",
-    "save": "Änderungen speichern"
+    "save": "Änderungen speichern",
+    "saving": "Wird gespeichert…"
   },
   "reports": {
     "empty": "Es liegen noch keine Berichte vor.",
@@ -52,7 +53,12 @@
   "common": {
     "loading": "Laden…",
     "notFoundTitle": "Seite nicht gefunden",
-    "notFoundText": "Die aufgerufene Seite ist nicht vorhanden."
+    "notFoundText": "Die aufgerufene Seite ist nicht vorhanden.",
+    "invalidAssetId": "Ungültige Asset-ID in der URL.",
+    "assetDetailsLoadError": "Details zur Maschine konnten nicht geladen werden.",
+    "assetsLoadError": "Maschinen konnten nicht geladen werden. Bitte versuchen Sie es erneut.",
+    "dashboardLoadError": "Dashboard-Daten konnten nicht geladen werden.",
+    "reportsLoadError": "Berichte konnten nicht geladen werden. Bitte versuchen Sie es erneut."
   },
   "footer": {
     "tagline": "Interne Demo für Wartung & Compliance"

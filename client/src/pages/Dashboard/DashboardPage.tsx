@@ -58,9 +58,14 @@ export default function DashboardPage() {
 
   return (
     <div>
+      {isError && (
+        <p className="text-over mb-4">{t("common.dashboardLoadError")}</p>
+      )}
+
       {!isLoading && !isError && !hasData && (
         <p className="text-dim mb-4">{t("dashboard.empty")}</p>
       )}
+
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {cards.map(({ key, label, value, tone, hint }) => (
           <StatCard

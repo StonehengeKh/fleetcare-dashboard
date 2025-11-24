@@ -12,9 +12,14 @@ type AssetDetailsFormProps = {
     "register" | "handleSubmit" | "formState"
   >;
   onSubmit: (values: AssetDetailsFormValues) => void;
+  isSaving?: boolean;
 };
 
-export function AssetDetailsForm({ form, onSubmit }: AssetDetailsFormProps) {
+export function AssetDetailsForm({
+  form,
+  onSubmit,
+  isSaving,
+}: AssetDetailsFormProps) {
   const { t } = useTranslation();
   const {
     register,
@@ -74,10 +79,11 @@ export function AssetDetailsForm({ form, onSubmit }: AssetDetailsFormProps) {
         <PrimaryButton
           type="submit"
           fullWidth
-          disabled={isSubmitting || !isDirty}
-          title={t("assetForm.save", "Save changes")}
+          disabled={isSubmitting || !isDirty || isSaving}
         >
-          {t("assetForm.save", "Save changes")}
+          {isSaving
+            ? t("assetForm.saving", "Saving…")
+            : t("assetForm.save", "Save changes")}
         </PrimaryButton>
       </div>
     </form>

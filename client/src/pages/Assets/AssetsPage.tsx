@@ -4,23 +4,21 @@ import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
 
-import { AssetCard, type AssetStatus } from "@components/AssetCard";
+import { AssetCard } from "@components/AssetCard";
 import {
   assetFilterSchema,
   type AssetFilterValues,
   type AssetStatusFilter,
 } from "@features/assets/filtersSchema";
 import { AssetFilters } from "@features/assets/AssetFilters";
-
-const mockAssets: { id: string; name: string; status: AssetStatus }[] = [
-  { id: "FLT-001", name: "Forklift #1", status: "OK" },
-  { id: "TRC-102", name: "Tractor #102", status: "Due soon" },
-  { id: "LOD-207", name: "Loader #207", status: "Overdue" },
-];
+import { useGetAssetsQuery } from "@features/assets/api";
+import type { AssetListItem } from "@types";
 
 export default function AssetsPage() {
   const { t } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const { data: assets, isLoading, isError } = useGetAssetsQuery();
 
   const initialStatus =
     (searchParams.get("status") as AssetStatusFilter | null) ?? "ALL";
@@ -45,19 +43,24 @@ export default function AssetsPage() {
   }, [values, setSearchParams]);
 
   const filteredAssets = useMemo(() => {
+    const list: AssetListItem[] = assets ?? [];
     const q = values.query?.toLowerCase().trim();
-    return mockAssets.filter((a) => {
+
+    return list.filter((a) => {
       const matchesQuery =
         !q ||
         a.name.toLowerCase().includes(q) ||
         a.id.toLowerCase().includes(q);
+
       const matchesStatus =
         values.status === "ALL" || a.status === values.status;
+
       return matchesQuery && matchesStatus;
     });
-  }, [values]);
+  }, [assets, values]);
 
   const hasAssets = filteredAssets.length > 0;
+  const hasLoadedList = !isLoading && !isError && (assets?.length ?? 0) > 0;
 
   return (
     <div>
@@ -65,8 +68,18 @@ export default function AssetsPage() {
 
       <AssetFilters form={form} />
 
-      {!hasAssets && (
-        <p className="text-dim mb-4">{t("assets.noFilteredEntries")}</p>
+      {isLoading && <p className="text-dim mb-4">{t("common.loading")}</p>}
+
+      {isError && (
+        <p className="text-over mb-4">{t("common.assetsLoadError")}</p>
+      )}
+
+      {!isLoading && !isError && !hasAssets && (
+        <p className="text-dim mb-4">
+          {hasLoadedList
+            ? t("assets.noFilteredEntries")
+            : t("assets.noEntries")}
+        </p>
       )}
 
       {hasAssets && (

@@ -43,7 +43,8 @@
     "nextInspectionError": "Please enter a valid date.",
     "notesLabel": "Notes",
     "notesError": "Notes must not exceed 1000 characters.",
-    "save": "Save changes"
+    "save": "Save changes",
+    "saving": "Saving…"
   },
   "reports": {
     "empty": "No reports available yet.",
@@ -52,7 +53,12 @@
   "common": {
     "loading": "Loading…",
     "notFoundTitle": "Page not found",
-    "notFoundText": "The page you are looking for doesn’t exist."
+    "notFoundText": "The page you are looking for doesn’t exist.",
+    "invalidAssetId": "Invalid asset id in URL.",
+    "assetDetailsLoadError": "Failed to load asset details.",
+    "assetsLoadError": "Failed to load assets. Please try again.",
+    "dashboardLoadError": "Failed to load dashboard data.",
+    "reportsLoadError": "Failed to load reports. Please try again."
   },
   "footer": {
     "tagline": "Internal maintenance & compliance demo"
