@@ -1,25 +1,33 @@
+import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import BackLink from "@components/BackLink";
-import type { AssetStatus } from "@components/AssetCard";
 import { AssetDetailsForm } from "@features/assets/AssetDetailsForm";
 import { ComplianceItem, MaintenanceEntry } from "@types";
 import {
   assetDetailsSchema,
   type AssetDetailsFormValues,
 } from "@features/assets/formTypes";
-
-const asset = {
-  id: "TRC-102",
-  name: "Tractor #102",
-  status: "Due soon" as AssetStatus,
-  nextInspection: "",
-  notes: "",
-};
+import {
+  useGetAssetByIdQuery,
+  useUpdateAssetMutation,
+} from "@features/assets/api";
 
 export default function AssetDetailsPage() {
   const { t } = useTranslation();
+  const { id } = useParams<{ id: string }>();
+
+  const {
+    data: asset,
+    isLoading,
+    isError,
+  } = useGetAssetByIdQuery(id ?? "", {
+    skip: !id,
+  });
+
+  const [updateAsset, { isLoading: isSaving }] = useUpdateAssetMutation();
 
   const maintenanceEntries: MaintenanceEntry[] = [];
   const complianceItems: ComplianceItem[] = [];
@@ -29,16 +37,57 @@ export default function AssetDetailsPage() {
   const form = useForm<AssetDetailsFormValues>({
     resolver: zodResolver(assetDetailsSchema),
     defaultValues: {
-      name: asset.name,
-      status: asset.status,
-      nextInspection: asset.nextInspection,
-      notes: asset.notes,
+      name: asset?.name ?? "",
+      status: asset?.status ?? "OK",
+      nextInspection: asset?.nextInspection ?? "",
+      notes: asset?.notes ?? "",
     },
+    values: asset
+      ? {
+          name: asset.name,
+          status: asset.status,
+          nextInspection: asset.nextInspection ?? "",
+          notes: asset.notes ?? "",
+        }
+      : undefined,
   });
 
-  const onSubmit = (values: AssetDetailsFormValues) => {
-    console.log("Submitted asset", { id: asset.id, ...values });
+  const onSubmit = async (values: AssetDetailsFormValues) => {
+    if (!id) return;
+    try {
+      await updateAsset({ id, body: values }).unwrap();
+      console.log("Submitted asset", { id, ...values });
+    } catch (error) {
+      console.error("Failed to update asset", error);
+    }
   };
+
+  if (!id) {
+    return (
+      <div>
+        <BackLink label={t("assets.back")} />
+        <p className="text-over mt-2">{t("common.invalidAssetId")}</p>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div>
+        <BackLink label={t("assets.back")} />
+        <p className="text-dim mt-2">{t("common.loading")}</p>
+      </div>
+    );
+  }
+
+  if (isError || !asset) {
+    return (
+      <div>
+        <BackLink label={t("assets.back")} />
+        <p className="text-over mt-2">{t("common.assetDetailsLoadError")}</p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -46,13 +95,13 @@ export default function AssetDetailsPage() {
         <BackLink label={t("assets.back")} />
       </div>
 
-      <h2 className="text-xl font-semibold">{t("header.assetsTitle")}</h2>
+      <h2 className="text-xl font-semibold">{asset.name}</h2>
 
       {isEmptyLists && (
         <p className="text-dim mt-1">{t("assets.detailStub")}</p>
       )}
 
-      <AssetDetailsForm form={form} onSubmit={onSubmit} />
+      <AssetDetailsForm form={form} onSubmit={onSubmit} isSaving={isSaving} />
 
       <div className="grid sm:grid-cols-2 gap-4 mt-6">
         <div className="rounded-xl2 bg-card border border-card-edge p-4">

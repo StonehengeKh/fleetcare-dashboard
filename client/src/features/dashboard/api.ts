@@ -1,12 +1,19 @@
 import { api } from "@shared/api/baseApi";
-import type { ComplianceSummary } from "@types";
+
+export interface ComplianceSummary {
+  ok: number;
+  dueSoon: number;
+  overdue: number;
+  openReports: number;
+}
 
 export const dashboardApi = api.injectEndpoints({
   endpoints: (build) => ({
     getComplianceSummary: build.query<ComplianceSummary, void>({
-      query: () => "/compliance/summary",
+      query: () => "/dashboard/summary",
     }),
   }),
+  overrideExisting: false,
 });
 
 export const { useGetComplianceSummaryQuery } = dashboardApi;
